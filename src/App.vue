@@ -1,6 +1,67 @@
 <script setup>
 import Forms from './components/Forms.vue';
 import { ref, reactive } from 'vue';
+</script>
+
+
+
+<template>
+
+  <Forms/>
+
+  
+</template>
+
+
+<style scoped></style>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- <script setup>
+import Forms from './components/Forms.vue';
+import { ref, reactive } from 'vue';
 
 const estados = [
   { sigla: 'AC', name: 'Acre' },
@@ -77,7 +138,11 @@ function EnviarDados() {
 
 <template>
 
+
 <Forms/>
+
+
+
 
 
 
@@ -181,7 +246,90 @@ function EnviarDados() {
 <style scoped>
 
 
-.custom-form {
+/* .custom-form {
+  max-width: 40%;
+  margin: 0px auto 0px auto;
+  padding: 20px;
+  border-radius: 10px;
+  background-color: #044742;
+  
+}
+
+h1 {
+  text-align: center;
+  color: #ebebeb;
+  margin-bottom: 20px;
+}
+
+.custom-input-container {
+  margin-bottom: 10px;
+}
+
+label {
+  display: block;
+  font-size: 18px;
+  margin-bottom: 5px;
+  color: #ebebeb;
+}
+
+input[type='text'],
+input[type='email'],
+input[type='password'],
+input[type='number'],
+input[type='date'],
+textarea,
+select {
+  width: 50%;
+  padding: 10px;
+  font-size: 16px;
+  border-radius: 5px;
+  border: 1px solid #000000;
+}
+
+
+
+.custom-check-container {
+  margin-bottom: 15px;
+}
+
+.custom-checkbox {
+  display: flex;
+  align-items: center;
+  margin-bottom: 5px;
+}
+
+.custom-checkbox input {
+  margin-right: 10px;
+}
+
+.custom-bio-container {
+  margin-bottom: 15px;
+}
+
+textarea {
+  width: 90%;
+  padding: 10px;
+  font-size: 16px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+.custom-submit-container {
+  text-align: center;
+}
+
+.custom-submit {
+  width: 200px;
+  padding: 10px;
+  background-color: #175458; 
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 18px;
+}
+
+.custom-submit:hover {.custom-form {
   max-width: 40%;
   margin: 0px auto 0px auto;
   padding: 20px;
@@ -273,6 +421,14 @@ textarea {
   padding: 3px;
   margin-bottom: 10px;
   
-}
+} */
 
-</style>
+/* 
+.usuario > p{
+  color: white;
+  padding: 3px;
+  margin-bottom: 10px;
+  
+} */   -->
+
+<!-- </style> -->
