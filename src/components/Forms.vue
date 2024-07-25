@@ -29,62 +29,98 @@ const estados = [
   { sigla: 'TO', name: 'Tocantins' }
 ]
 
-const hobbies = reactive([
-  { id: 1, hobbie: 'Esporte' },
-  { id: 2, hobbie: 'Ler' },
-  { id: 3, hobbie: 'Cozinhar' },
-  { id: 4, hobbie: 'Viajar' }
-])
+
 </script>
 
 
 <template>
- <h1>Formulario</h1>
+  
+  <h1>Formulario</h1>
 
- <form >
+  <form>
+    <div class="container-forms">
 
-<label for="Nome"> Digite seu nome:</label>
-<input type="text">
+    <label for="Nome"> Digite seu nome:</label>
+    <input type="text">
 
-<label for="Email">Digite o seu email:</label>
-<input type="email">
+    <label for="Email">Digite o seu email:</label>
+    <input type="email">
 
-<label for="Senha">Digite sua senha:</label>
-<input type="password">
+    <label for="Senha">Digite sua senha:</label>
+    <input type="password">
 
-<label for="Confirmacao">Digite sua senha mais uma vez:</label>
-<input type="password">
- 
-<label for="DataNacimento">Digite sua data de nascimento:</label>
-<input type="date">
+    <label for="Confirmacao">Digite sua senha mais uma vez:</label>
+    <input type="password">
 
-<label for="Idade">Digite a sua idade:</label>
-<input type="number">
+    <label for="DataNacimento">Digite sua data de nascimento:</label>
+    <input type="date"></div>
 
-<label for="Estado">Selecione o seu estado:</label>
+    <label for="Estado">Selecione o seu estado:</label>
 
-<select >
-          <option v-for="estado in estados" :key="estado.sigla" :value="estado.sigla">
-            {{ estado.name }}
-          </option>
-</select>
+    <select>
+      <option v-for="estado in estados" :key="estado.sigla" :value="estado.sigla">
+        {{ estado.name }}
+      </option>
+    </select>
 
-<label for="Cidade">Digite a sua cidade:</label>
-<input type="text">
+    <label for="Cidade">Digite a sua cidade:</label>
+    <input type="text">
 
-<label for="Endereco">Informe o seu endereço</label>
-<input type="text">
+    <label for="Endereco">Informe o seu endereço</label>
+    <input type="text">
+
+   <div class="container-hobbies"> 
+<label for="hobbies">Selecione os seus hobbie:</label>
+      <div>
+        <input type="checkbox" id="esporte">
+        <label for="Sport">Esporte</label>
+
+      </div>
+      <div>
+        <input type="checkbox" id="ler">
+        <label for="read">Ler </label>
+      </div>
+      <div>
+        <input type="checkbox" id="cozinhar">
+        <label for="cook">Cozinhar</label>
+      </div>
+      <div>
+        <input type="checkbox" id="viajar">
+        <label for="travel">Viajar</label>
+      </div>
+    
+
+    <label for="linguagens">Selecione os seus:</label>
+      <div>
+        <input type="checkbox" id="Java">
+        <label for="java">Java</label>
+
+      </div>
+      <div>
+        <input type="checkbox" id=" C++">
+        <label for="c++">C++</label>
+      </div>
+      <div>
+        <input type="checkbox" id="Python">
+        <label for="python">Python</label>
+      </div>
+      <div>
+        <input type="checkbox" id="PHP">
+        <label for="php">PHP</label>
+      </div>
+    </div>
 
 
-<label for="Hobbies"> Selecione os seus hobbies</label>
-<input type="checkbox" :value="passatempo.hobbie" :id="passatempo.hobbie"
-          />
-          <label :for="passatempo.hobbie">{{ passatempo.hobbie }}</label>
-</form>
 
+
+  </form>
 </template>
 
 
 <style scoped>
-
+.container-form{
+  height: 500px;
+  width: 500px;
+  text-align: center;
+}
 </style>
