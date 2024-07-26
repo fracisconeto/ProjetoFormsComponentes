@@ -4,63 +4,66 @@ import Forms from './components/Forms.vue'
 import Display from './components/Display.vue'
 
 const dados = ref({
-  email: '',
   nome: '',
-  dataN: '',
+  email: '',
+  senha: '',
+  confirmacao: '',
+  data: '',
   endereco: '',
   cidade: '',
   estado: '',
   hobbies: '',
   linguagens: '',
-  biografia: '',
-  senha: '',
-  confirmacao: ''
+  bio: '',
+ 
 })
 
-const mostrarDados = ref(false)
+const mostrar = ref(false)
 
-function handleMostrarDados(dadosFormulario) {
+function handleforms(dadosFormulario) {
   dados.value = dadosFormulario
-  mostrarDados.value = true
+  mostrar.value = true
 }
 
-function handleDadosLimpos() {
+function handlemostrar() {
   dados.value = {
-    email: '',
     nome: '',
-    dataN: '',
+    email: '',
+    senha: '',
+    confirmacao: '',
+    data: '',
     endereco: '',
     cidade: '',
     estado: '',
     hobbies: '',
     linguagens: '',
-    biografia: '',
-    senha: '',
-    confirmacao: ''
+    bio: '',
+    
   }
-  mostrarDados.value = false
+  mostrar.value = false
 }
 </script>
 <template>
   <div id="app">
     <h1 class="text-center">Meu Formulário de Dados</h1>
     <Forms
-      @mostrarDados="handleMostrarDados"
-      @dadosLimpos="handleDadosLimpos"
+      @mostrar="handleforms"
+      @dadosLimpos="handlemostrar"
     />
     <Display
-      :email="dados.email"
       :nome="dados.nome"
-      :dataN="dados.dataN"
+      :email="dados.email"
+      :senha="dados.senha"
+      :confirmacao="dados.confirmacao"
+      :data="dados.data"
       :endereco="dados.endereco"
       :cidade="dados.cidade"
       :estado="dados.estado"
       :hobbies="dados.hobbies"
       :linguagens="dados.linguagens"
-      :biografia="dados.biografia"
-      :senha="dados.senha"
-      :confirmacao="dados.confirmacao"
-      :mostrar="mostrarDados"
+      :bio="dados.bio"
+     
+      :mostrar="mostrar"
     />
   </div>
 </template>
