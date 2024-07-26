@@ -49,8 +49,9 @@ function MostrarDados() {
 }
 </script>
 <template>
+  <h1>Meu Formulário de Dados</h1>
   <div class="forms-conteiner">
-    <form class="edit">
+    <form>
 
       <div class="forms">
         <label for="nome">Nome:</label>
@@ -137,5 +138,154 @@ function MostrarDados() {
 </template>
 
 <style scoped>
+
+  
+.forms-conteiner {
+  max-width: 600px;
+  margin: 50px auto;
+  padding: 40px;
+  border-radius: 20px;
+  background: linear-gradient(145deg, #00c6ff, #0072ff);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3);
+  border: 2px solid #0072ff;
+  position: relative;
+  overflow: hidden;
+}
+
+
+.forms-conteiner::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle at 20% 20%, rgba(255, 255, 255, 0.15), transparent);
+  opacity: 0.4;
+  pointer-events: none;
+  z-index: 0;
+}
+
+
+h1 {
+  text-align: center;
+  color: #0f0303;
+  margin-bottom: 20px;
+  font-family: 'Roboto', sans-serif;
+  font-size: 2.5rem;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+  position: relative;
+  z-index: 1;
+}
+
+
+.forms {
+  margin-bottom: 20px;
+}
+
+label {
+  display: block;
+  font-size: 18px;
+  color: #ffffff;
+  margin-bottom: 8px;
+  font-family: 'Roboto', sans-serif;
+  position: relative;
+  z-index: 1;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="date"],
+textarea,
+select {
+  width: 100%;
+  padding: 12px;
+  border: none;
+  border-radius: 8px;
+  box-sizing: border-box;
+  font-size: 16px;
+  font-family: 'Roboto', sans-serif;
+  transition: all 0.3s ease;
+  background: rgba(255, 255, 255, 0.9);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  position: relative;
+  z-index: 1;
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="password"]:focus,
+input[type="date"]:focus,
+textarea:focus,
+select:focus {
+  background: rgba(255, 255, 255, 1);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+  outline: none;
+}
+
+
+select option {
+  background: #0072ff;
+  color: #fff;
+}
+
+
+textarea {
+  height: 120px;
+  resize: vertical;
+}
+
+select {
+  background: rgba(255, 255, 255, 0.9);
+}
+
+
+.buttons {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  margin-top: 30px;
+}
+
+button {
+  padding: 14px 25px;
+  border: none;
+  border-radius: 12px;
+  color: #fff;
+  font-size: 18px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-family: 'Roboto', sans-serif;
+  width: 48%;
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+}
+
+button::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle at 50%, rgba(255, 255, 255, 0.3), transparent);
+  transition: all 0.3s ease;
+  z-index: -1;
+}
+
+button:hover::before {
+  background: radial-gradient(circle at 50%, rgba(255, 255, 255, 0.5), transparent);
+}
+
+button:first-of-type {
+  background: #ff5e57;
+}
+
+button:last-of-type {
+  background: #00c6ff; 
+}
+
 
 </style>

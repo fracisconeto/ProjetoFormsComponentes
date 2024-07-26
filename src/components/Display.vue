@@ -42,4 +42,78 @@ const props = defineProps({
 
 <style scoped>
 
+.dados-container {
+  max-width: 700px;
+  margin: 40px auto;
+  padding: 30px;
+  border-radius: 15px;
+  background: linear-gradient(145deg, #ffffff, #e6e6e6);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  position: relative;
+  overflow: hidden;
+}
+
+.dados-container::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle at 30% 30%, rgba(0, 0, 0, 0.05), transparent);
+  opacity: 0.3;
+  pointer-events: none;
+  z-index: 0;
+}
+
+
+h2 {
+  text-align: center;
+  color: #333;
+  margin-bottom: 20px;
+  font-family: 'Roboto', sans-serif;
+  font-size: 2rem;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+  position: relative;
+  z-index: 1;
+}
+
+
+.list {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.list li {
+  padding: 15px;
+  border-bottom: 1px solid #ddd;
+  font-family: 'Roboto', sans-serif;
+  font-size: 16px;
+  color: #555;
+  background: rgba(255, 255, 255, 0.8);
+  position: relative;
+  z-index: 1;
+}
+
+.list li:last-of-type {
+  border-bottom: none;
+}
+
+.list strong {
+  color: #0072ff; 
+}
+
+
+.list li:hover {
+  background: rgba(0, 114, 255, 0.1);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transform: translateY(-2px);
+  transition: all 0.3s ease;
+}
+
+.list li:hover strong {
+  color: #0056b3;
+}
+
 </style>

@@ -18,10 +18,10 @@ const dados = ref({
  
 })
 
-const mostrar = ref(false)
 
-function handleforms(dadosFormulario) {
-  dados.value = dadosFormulario
+
+function handleforms(Formulário) {
+  dados.value = Formulário
   mostrar.value = true
 }
 
@@ -44,8 +44,8 @@ function handlemostrar() {
 }
 </script>
 <template>
-  <div id="app">
-    <h1 class="text-center">Meu Formulário de Dados</h1>
+  <div class="conteiner">
+    
     <Forms
       @mostrar="handleforms"
       @dadosLimpos="handlemostrar"
