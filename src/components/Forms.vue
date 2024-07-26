@@ -1,215 +1,141 @@
 <script setup>
-// const emit = defineEmits(['salvar'])
-const estados = [
-  { sigla: 'AC', name: 'Acre' },
-  { sigla: 'AL', name: 'Alagoas' },
-  { sigla: 'AP', name: 'Amapá' },
-  { sigla: 'AM', name: 'Amazonas' },
-  { sigla: 'BA', name: 'Bahia' },
-  { sigla: 'CE', name: 'Ceará' },
-  { sigla: 'DF', name: 'Distrito Federal' },
-  { sigla: 'ES', name: 'Espírito Santo' },
-  { sigla: 'GO', name: 'Goiás' },
-  { sigla: 'MA', name: 'Maranhão' },
-  { sigla: 'MT', name: 'Mato Grosso' },
-  { sigla: 'MS', name: 'Mato Grosso do Sul' },
-  { sigla: 'MG', name: 'Minas Gerais' },
-  { sigla: 'PA', name: 'Pará' },
-  { sigla: 'PB', name: 'Paraíba' },
-  { sigla: 'PR', name: 'Paraná' },
-  { sigla: 'PE', name: 'Pernambuco' },
-  { sigla: 'PI', name: 'Piauí' },
-  { sigla: 'RJ', name: 'Rio de Janeiro' },
-  { sigla: 'RN', name: 'Rio Grande do Norte' },
-  { sigla: 'RS', name: 'Rio Grande do Sul' },
-  { sigla: 'RO', name: 'Rondônia' },
-  { sigla: 'RR', name: 'Roraima' },
-  { sigla: 'SC', name: 'Santa Catarina' },
-  { sigla: 'SP', name: 'São Paulo' },
-  { sigla: 'SE', name: 'Sergipe' },
-  { sigla: 'TO', name: 'Tocantins' }
-]
-// function handleSubmit(){
-//   emit('salvar', ???)
-// }
-
-</script>
+import { ref, defineEmits } from 'vue'
+const nome = ref('')
+const email = ref('')
+const senha = ref('')
+const confirmacao = ref('')
+const data = ref('')
+const endereco = ref('')
+const cidade = ref('')
+const estado = ref('')
+const hobbies = ref('')
+const linguagens = ref('')
+const bio = ref('')
 
 
-<template>
+const emit = defineEmits(['forms-dados', 'limpar'])
+
+function limparDados() {
+  nome.value = ""
+  email.value = ""
+  senha.value = ""
+  confirmacao.value = ""
+  data.value = ""
+  endereco.value = ""
+  cidade.value = ""
+  estado.value = ""
+  hobbies.value = ""
+  linguagens.value = ""
+  bio.value = ""
   
-  <h1>Formulario</h1>
+  emit('limpar', {nome: nome.value, email: email.value,  data: data.value, senha: senha.value, confirmacao: confirmacao.value, endereco: endereco.value, cidade: cidade.value, estado: estado.value, hobbies: hobbies.value, linguagens: linguagens.value, bio: bio.value,  })
+}
 
-  <form>
-    <div class="container-forms">
+function MostrarDados() {
+  emit('forms-dados', {
+    nome: nome.value,
+    email: email.value,
+    senha: senha.value,
+    confirmacao: confirmacao.value,
+    data: data.value,
+    endereco: endereco.value,
+    cidade: cidade.value,
+    estado: estado.value,
+    hobbies: hobbies.value,
+    linguagens: linguagens.value,
+    bio: bio.value
+   
+  })
+}
+</script>
+<template>
+  <div class="forms-conteiner">
+    <form class="edit">
 
-    <label for="Nome"> Digite seu nome:</label>
-    <input type="text">
-
-    <label for="Email">Digite o seu email:</label>
-    <input type="email">
-
-    <label for="Senha">Digite sua senha:</label>
-    <input type="password">
-
-    <label for="Confirmacao">Digite sua senha mais uma vez:</label>
-    <input type="password">
-
-    <label for="DataNacimento">Digite sua data de nascimento:</label>
-    <input type="date"></div>
-
-    <label for="Estado">Selecione o seu estado:</label>
-
-    <select>
-      <option v-for="estado in estados" :key="estado.sigla" :value="estado.sigla">
-        {{ estado.name }}
-      </option>
-    </select>
-
-    <label for="Cidade">Digite a sua cidade:</label>
-    <input type="text">
-
-    <label for="Endereco">Informe o seu endereço</label>
-    <input type="text">
-
-   <div class="container-hobbies"> 
-<label for="hobbies">Selecione os seus hobbie:</label>
-      <div>
-        <input type="checkbox" id="esporte">
-        <label for="Sport">Esporte</label>
-
+      <div class="forms">
+        <label for="nome">Nome:</label>
+        <input id="nome" type="text" v-model="nome" >
       </div>
-      <div>
-        <input type="checkbox" id="ler">
-        <label for="read">Ler </label>
-      </div>
-      <div>
-        <input type="checkbox" id="cozinhar">
-        <label for="cook">Cozinhar</label>
-      </div>
-      <div>
-        <input type="checkbox" id="viajar">
-        <label for="travel">Viajar</label>
-      </div>
-    
 
-    <label for="linguagens">Selecione os seus:</label>
-      <div>
-        <input type="checkbox" id="Java">
-        <label for="java">Java</label>
+      <div class="forms">
+        <label for="email">Email:</label>
+        <input id="email" type="email" v-model="email" >
+      </div>
+      <div class="forms">
+        <label for="senha">Senha:</label>
+        <input id="senha" type="password" v-model="senha" >
+      </div>
+      <div class="forms">
+        <label for="confirmacao">Confirmação de Senha:</label>
+        <input id="confirmacao" type="password" v-model="confirmacao">
+      </div>
+     
+      <div class="forms">
+        <label for="dataN">Data de Nascimento:</label>
+        <input id="dataN" type="date" v-model="data" >
+      </div>
+      <div class="forms">
+        <label for="endereco">Endereço:</label>
+        <input id="endereco" type="text" v-model="endereco">
+      </div>
+      <div class="forms">
+        <label for="cidade">Cidade:</label>
+        <input id="cidade" type="text" v-model="cidade" >
+      </div>
+      <div class="forms">
+        <label for="estado">Estado:</label>
+        <select id="estado" v-model="estado" >
+          <option value="" disabled>Selecione seu estado:</option>
+          <option>AC</option>
+          <option>AL</option>
+          <option>AM</option>
+          <option>BA</option>
+          <option>CE</option>
+          <option>DF</option>
+          <option>ES</option>
+          <option>GO</option>
+          <option>MA</option>
+          <option>MG</option>
+          <option>MS</option>
+          <option>MT</option>
+          <option>PA</option>
+          <option>PB</option>
+          <option>PE</option>
+          <option>PI</option>
+          <option>PR</option>
+          <option>RJ</option>
+          <option>RN</option>
+          <option>RO</option>
+          <option>RR</option>
+          <option>RS</option>
+          <option>SC</option>
+          <option>SE</option>
+          <option>SP</option>
+          <option>TO</option>
+        </select>
+      </div>
+      <div class="forms">
+        <label for="hobbies">Hobbies:</label>
+        <input id="hobbies" type="text" v-model="hobbies" >
+      </div>
+      <div class="forms">
+        <label for="linguagens">Linguagens de Programação:</label>
+        <input id="linguagens" type="text" v-model="linguagens" >
+      </div>
+      <div class="forms">
+        <label for="biografia">Biografia:</label>
+        <textarea id="biografia" v-model="biografia" ></textarea>
+      </div>
+     
+    </form>
 
-      </div>
-      <div>
-        <input type="checkbox" id=" C++">
-        <label for="c++">C++</label>
-      </div>
-      <div>
-        <input type="checkbox" id="Python">
-        <label for="python">Python</label>
-      </div>
-      <div>
-        <input type="checkbox" id="PHP">
-        <label for="php">PHP</label>
-      </div>
+    <div class="buttons">
+      <button @click="MostrarDados">Confimarção</button>
+      <button @click="limparDados" >Limpar</button>
     </div>
-
-<button @click="handleSubmit">enviar</button>
-
-
-  </form>
+  </div>
 </template>
 
-
 <style scoped>
-
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-
-body {
-  font-family: Arial, sans-serif;
-  line-height: 1.6;
-  background-color: #f4f4f4;
-  color: #333;
-  padding: 20px;
-}
-
-
-h1 {
-  text-align: center;
-  color: #333;
-  margin-bottom: 20px;
-}
-
-
-form {
-  max-width: 600px;
-  margin: auto;
-  background: #fff;
-  padding: 20px;
-  border-radius: 8px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
-
-
-label {
-  display: block;
-  margin-bottom: 5px;
-  font-weight: bold;
-  color: #333;
-}
-
-
-input[type="text"],
-input[type="email"],
-input[type="password"],
-input[type="date"],
-select {
-  width: 100%;
-  padding: 10px;
-  margin-bottom: 15px;
-  border: 1px solid #ddd;
-  border-radius: 4px;
-  font-size: 16px;
-}
-
-
-.container-hobbies div,
-.container-hobbies div input[type="checkbox"],
-.container-hobbies div label {
-  display: inline-block;
-  margin-right: 15px;
-  vertical-align: middle;
-}
-
-input[type="checkbox"] {
-  margin-right: 5px;
-}
-
-
-button {
-  display: block;
-  width: 100%;
-  padding: 10px;
-  background-color: #5cb85c;
-  color: #fff;
-  border: none;
-  border-radius: 4px;
-  font-size: 18px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-}
-
-button:hover {
-  background-color: #4cae4c;
-}
-
-
-.container-hobbies {
-  margin-bottom: 20px;
-}
 
 </style>
