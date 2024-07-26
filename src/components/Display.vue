@@ -20,7 +20,7 @@ const props = defineProps({
 <template>
   <div v-if="mostrar" class="dados-container">
     <h2>Dados do Usuário</h2>
-    <ul class="list">
+    <ul>
 
       <li><strong>Nome:</strong> {{ nome }}</li>
       <li><strong>Email:</strong> {{ email }}</li>
@@ -79,13 +79,13 @@ h2 {
 }
 
 
-.list {
+.ul{
   list-style-type: none;
   padding: 0;
   margin: 0;
 }
 
-.list li {
+.ul li {
   padding: 15px;
   border-bottom: 1px solid #ddd;
   font-family: 'Roboto', sans-serif;
@@ -96,23 +96,23 @@ h2 {
   z-index: 1;
 }
 
-.list li:last-of-type {
+ul li:last-of-type {
   border-bottom: none;
 }
 
-.list strong {
+ul strong {
   color: #0072ff; 
 }
 
 
-.list li:hover {
+ul li:hover {
   background: rgba(0, 114, 255, 0.1);
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   transform: translateY(-2px);
   transition: all 0.3s ease;
 }
 
-.list li:hover strong {
+ul li:hover strong {
   color: #0056b3;
 }
 
