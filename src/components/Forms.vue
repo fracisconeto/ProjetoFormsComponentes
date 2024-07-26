@@ -1,4 +1,5 @@
 <script setup>
+// const emit = defineEmits(['salvar'])
 const estados = [
   { sigla: 'AC', name: 'Acre' },
   { sigla: 'AL', name: 'Alagoas' },
@@ -28,7 +29,9 @@ const estados = [
   { sigla: 'SE', name: 'Sergipe' },
   { sigla: 'TO', name: 'Tocantins' }
 ]
-
+// function handleSubmit(){
+//   emit('salvar', ???)
+// }
 
 </script>
 
@@ -110,7 +113,7 @@ const estados = [
       </div>
     </div>
 
-
+<button @click="handleSubmit">enviar</button>
 
 
   </form>
@@ -118,9 +121,95 @@ const estados = [
 
 
 <style scoped>
-.container-form{
-  height: 500px;
-  width: 500px;
-  text-align: center;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
+
+
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  background-color: #f4f4f4;
+  color: #333;
+  padding: 20px;
+}
+
+
+h1 {
+  text-align: center;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+
+form {
+  max-width: 600px;
+  margin: auto;
+  background: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+
+label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+  color: #333;
+}
+
+
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="date"],
+select {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 16px;
+}
+
+
+.container-hobbies div,
+.container-hobbies div input[type="checkbox"],
+.container-hobbies div label {
+  display: inline-block;
+  margin-right: 15px;
+  vertical-align: middle;
+}
+
+input[type="checkbox"] {
+  margin-right: 5px;
+}
+
+
+button {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  background-color: #5cb85c;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  font-size: 18px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #4cae4c;
+}
+
+
+.container-hobbies {
+  margin-bottom: 20px;
+}
+
 </style>
